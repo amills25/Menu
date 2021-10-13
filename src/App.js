@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import axios from "axios";
-import logo from './logo.svg';
-import './App.css';
 
 class App extends Component {
     constructor() {
@@ -42,21 +40,14 @@ class App extends Component {
     render() {
 
         return (
-            <div className="App">
-                <header className="App-header">
-                    <img src={logo} className="App-logo" alt="logo" />
-                    <p>
-                        Edit <code>src/App.js</code> and save to reload.
-                    </p>
-                    <a
-                        className="App-link"
-                        href="https://reactjs.org"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Learn React
-                    </a>
-                </header>
+            <div>
+                <div type="img" src="./src/img/AMBlackSmallTrans.jpg" className="rounded img-fluid mx-auto d-block" alt="Small Black Logo" />
+                <h1>Berg Bistro</h1>
+                <code onClick={this.loadAPI.bind(this)}>Menu</code>
+                <p>
+                    {this.state.menuAPIData.name}
+                    {this.state.menuAPIData.description}
+                </p>
             </div>
         );
     }
