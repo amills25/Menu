@@ -14,6 +14,23 @@ class App extends Component {
             image: null,
             menuAPIData: {}
         };
+        let imageArray = [
+            "./img/banana.png",
+            "./img/burger.png",
+            "./img/chef.png",
+            "./img/chefhatblack.jpg",
+            "./img/donut.jpg",
+            "./img/fries.png",
+            "./img/fruit.png",
+            "./img/hotdog.png",
+            "./img/pasta.jpg",
+            "./img/pie.png",
+            "./img/pizza.png",
+            "./img/plate.jpg",
+            "./img/salad.jpg",
+            "./img/sandwich.png",
+            "./img/tacos.png",
+        ]
     }
 
 
@@ -29,11 +46,7 @@ class App extends Component {
         )
     }
     generateImage(img) {
-        this.setState (
-            {
-                image: img
-            }
-        )
+        
     }
     componentDidMount() {
         console.log("App successfully loaded!");
@@ -83,22 +96,22 @@ class App extends Component {
                 <button className='d-grid gap-2 col-1 mx-auto btn btn-outline-dark' onClick={this.loadAPI.bind(this)}>View Menu</button>
                 <h3 className="text-center">Menu:</h3>
                 <div className='container'>
-                    <div className='row'>
-                        <div className='col'>
+                    <div className='row justify-content-center'>
+                        <div className='col text-center'>
                             <Item />
                             <Item />
                             <Item />
                             <Item />
                             <Item />
                         </div>
-                        <div className='col'>
+                        <div className='col text-center'>
                             <Item />
                             <Item />
                             <Item />
                             <Item />
                             <Item />
                         </div>
-                        <div className='col'>
+                        <div className='col text-center'>
                             <Item />
                             <Item />
                             <Item />
