@@ -1,7 +1,12 @@
 import React, { Component } from "react";
 import axios from "axios";
+import Item from "./Item";
+// import Image from 'react-bootstrap/Image';
 
 class App extends Component {
+    //App / Menu
+    //Model
+    //3 items across, 5 tall
     constructor() {
         super()
         this.state = {
@@ -9,6 +14,17 @@ class App extends Component {
         };
     }
 
+
+    //Controller
+    //Item
+
+
+    generatePrice() {
+
+    }
+    generateImage() {
+
+    }
     componentDidMount() {
         console.log("App successfully loaded!");
     }
@@ -16,7 +32,7 @@ class App extends Component {
         console.log("App successfully updated!");
     }
     loadAPI() {
-        const menu_API_URL = "https://port-3000-aincbootcampapi-ianrios529550.codeanyapp.com/api/menu/type_amount/3/15";
+        const menu_API_URL = "https://port-3000-aincbootcampapi-ianrios529550.codeanyapp.com/api/menu/type_amount/{type_id}/{amount_id}";
 
         axios.get(menu_API_URL)
             .then(res => {
@@ -37,20 +53,57 @@ class App extends Component {
         //this line would happen right after axios api call
     }
 
+    //View
+    //render entire page
+    //dynamically update page if menu items are present
+    //if items, show items
+    //else show loader?
+    //header
+    //restaurant logo, location, and hours
+    //grid of menu items
+
     render() {
 
         return (
-            <div>
-                <div type="img" src="./src/img/AMBlackSmallTrans.jpg" className="rounded img-fluid mx-auto d-block" alt="Small Black Logo" />
-                <h1>Berg Bistro</h1>
-                <code onClick={this.loadAPI.bind(this)}>Menu</code>
-                <p>
-                    {this.state.menuAPIData.name}
-                    {this.state.menuAPIData.description}
-                </p>
+            <div className="App">
+                <img src="./img/AMBlackSmallTrans.jpg" className="rounded mx-auto d-block" alt="Small Black Logo"></img>
+                <h1 className='text-center'>Berg Bistro</h1>
+                <h5 className='text-center'>348 E Main St, Lexington, KY 40507</h5>
+                <h6 className='text-center'>Tu-Sa 11A-3P</h6>
+                <button className='d-grid gap-2 col-1 mx-auto btn btn-outline-dark' onClick={this.loadAPI.bind(this)}>View Menu</button>
+                <h3 className="text-center">Menu:</h3>
+                <div className='container'>
+                    <div className='row'>
+                        <div className='col'>
+                            <Item />
+                            <Item />
+                            <Item />
+                            <Item />
+                            <Item />
+                        </div>
+                        <div className='col'>
+                            <Item />
+                            <Item />
+                            <Item />
+                            <Item />
+                            <Item />
+                        </div>
+                        <div className='col'>
+                            <Item />
+                            <Item />
+                            <Item />
+                            <Item />
+                            <Item />
+                        </div>
+                    </div>
+                </div>
             </div>
         );
     }
 }
 
 export default App;
+
+// https://port-3000-aincbootcampapi-ianrios529550.codeanyapp.com/api/menu/type_amount/{type_id}/{amount_id}
+// https://port-3000-aincbootcampapi-ianrios529550.codeanyapp.com/api/menu/type_amount/3/9
+// https://port-3000-aincbootcampapi-ianrios529550.codeanyapp.com/api/menu/type_amount/5/6
