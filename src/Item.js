@@ -14,10 +14,7 @@ export default function Item() {
     //View
     //show a card or list of info
     return (
-        // <div className="border border-dark">
-        //     Menu Item
-        // </div>
-        <div class="card" style= {{width: 18 + 'rem'}}>
+        <div class="card" style= {{width: 15 + 'rem'}}>
             <img src="./img/banana.png" class="card-img-top" alt="banana" />
                 <div class="card-body">
                     <h5 class="card-title">Item Name</h5>
@@ -27,6 +24,8 @@ export default function Item() {
         </div>
     );
 }
+
+// export default Item;
 
 // {this.state.menuAPIData.name}
 // {this.state.generatePrice}

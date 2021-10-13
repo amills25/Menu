@@ -97,21 +97,21 @@ class App extends Component {
                 <h3 className="text-center">Menu:</h3>
                 <div className='container'>
                     <div className='row justify-content-center'>
-                        <div className='col text-center'>
+                        <div className='col-4 text-center'>
                             <Item />
                             <Item />
                             <Item />
                             <Item />
                             <Item />
                         </div>
-                        <div className='col text-center'>
+                        <div className='col-4 text-center'>
                             <Item />
                             <Item />
                             <Item />
                             <Item />
                             <Item />
                         </div>
-                        <div className='col text-center'>
+                        <div className='col-4 text-center'>
                             <Item />
                             <Item />
                             <Item />
