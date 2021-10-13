@@ -30,7 +30,22 @@
 * Image
 * Price
 
+##### Controller Methods
+* generateImage?
+* generatePrice?
+* componentDidMount
+* componentDidUpdate
+* loadAPI
+ * Axios call
+
 ### ITEM
 ##### Props
 * API fed -- name
 * API fed -- description
+
+##### View
+* Card
+ * image
+ * name
+ * description
+ * price

@@ -10,6 +10,8 @@ class App extends Component {
     constructor() {
         super()
         this.state = {
+            price: "",
+            image: null,
             menuAPIData: {}
         };
     }
@@ -19,11 +21,19 @@ class App extends Component {
     //Item
 
 
-    generatePrice() {
-
+    generatePrice(dollar) {
+        this.setState (
+            {
+                price: dollar
+            }
+        )
     }
-    generateImage() {
-
+    generateImage(img) {
+        this.setState (
+            {
+                image: img
+            }
+        )
     }
     componentDidMount() {
         console.log("App successfully loaded!");
