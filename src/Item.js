@@ -25,7 +25,7 @@ class Item extends Component {
     }
 
     //View
-    //show a card or list of info
+    //show a boostrap card 
     render() {
         // console.log(this.props)
         return (
@@ -42,7 +42,3 @@ class Item extends Component {
 }
 
 export default Item;
-
-// {this.state.menuAPIData.name}
-// {this.state.generatePrice}
-// {this.state.menuAPIData.description}

@@ -65,15 +65,16 @@ class App extends Component {
                     // console.log(error);
                 });
         }
-        //this line would happen right after axios api call
     }
 
     //View
     //render entire page
     //header
-        //restaurant logo, location, and hours
+        //restaurant logo and name
     //grid of menu items
         //cards with image, name, price, and description
+    //footer
+        //hours and location
     render() {
         return (
             <div className="App">

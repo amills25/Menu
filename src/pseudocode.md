@@ -1,20 +1,20 @@
 1. Generate restaurant information
 * Restaurant name: Bistro Berg
 * Restaurant address: 348 E Main St, Lexington, KY 40507
-* Restaurant hours: Tu-Sa 11A-3P
+* Restaurant hours: Tu-Sa 11A-8P
 
 2. Connect API with Axios
 
 3. Dynamic menu
 * Lunch and dinner
 * Choose at least 15 menu items
- * 9 lunch and 6 dinner
- * will need more than one API calls
+ * 5 apps, 5 lunch, and 6 dinner
+ * will need more than one API call
 * Get a unique price for each item -- have a method to do so, can be random
 * Display menu as an organism
 * Each menu item as a molecule
  * bootstrap card
- * picture of meal, name, and price
+ * picture of meal, name, description, and price
 
 4. Must manage the React Component State
 
@@ -23,31 +23,38 @@
  * a molecule and an organism (a menu page and a menu item)
 
 ### MENU
-##### Props
-* API call
+##### Constructor
+* API data
+ * header
  * type_id -- gets meal
  * amount_id -- gets number of items
-* Image
-* Price
+ * data
+* imageArray
 
 ##### Controller Methods
-* generateImage?
-* generatePrice?
+* generateImage
+ * random image from imageArray
 * componentDidMount
+ * this.loadAPI
+ * this.generateImage
 * componentDidUpdate
 * loadAPI
  * Axios call
 
 ### ITEM
 ##### Props
-* API fed -- name
- * // response.data[0].name;
-* API fed -- description
- * // response.data[0].description;
+* state
+ * price: ""
+
+##### Controller Methods
+* generatePrice
+ * random price between 8-13 dollars
+* componentDidMount
+ * this.generatePrice
 
 ##### View
 * Card
  * image
  * name
- * description
  * price
+ * description
