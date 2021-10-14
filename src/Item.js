@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import axios from "axios";
-import App from './App';
 
 class Item extends Component {
     //Model
@@ -14,7 +12,7 @@ class Item extends Component {
     //Controller
     generatePrice(min, max) {
         let dollar = Math.floor(Math.random() * (max - min) + min);
-        console.log(dollar);
+        // console.log(dollar);
         this.setState(
             {
                 price: dollar
@@ -22,14 +20,14 @@ class Item extends Component {
         )
     }
     componentDidMount() {
-        console.log("Item successfully loaded!");
+        // console.log("Item successfully loaded!");
         this.generatePrice(8, 13);
     }
 
     //View
     //show a card or list of info
     render() {
-        console.log(this.props)
+        // console.log(this.props)
         return (
             <div class="card">
                 <img src={this.props.src} class="card-img-top" alt="banana" />

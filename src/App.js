@@ -32,20 +32,19 @@ class App extends Component {
         ]
     }
 
-
     //Controller
     generateImage() {
         var random = Math.floor(Math.random() * this.imageArray.length);
-        console.log(random);
+        // console.log(random);
         return this.imageArray[random];
     }
     componentDidMount() {
-        console.log("App successfully loaded!");
+        // console.log("App successfully loaded!");
         this.loadAPI();
         this.generateImage();
     }
     componentDidUpdate() {
-        console.log("App successfully updated!");
+        // console.log("App successfully updated!");
     }
     loadAPI() {
         const menu_API_URL = "https://port-3000-aincbootcampapi-ianrios529550.codeanyapp.com/api/menu/type_amount/";
@@ -56,18 +55,14 @@ class App extends Component {
             axios.get(menu_API_URL + currentItem.id + "/" + currentItem.amount)
                 .then( response => {
                     // handle success
-                    // let newData = [...currentItem.data];
-                    // newData = response.data;
                     currentItem.data = response.data;
                     this.setState({ menuAPIData: state });
-                    console.log(response);
+                    // console.log(response);
                 })
                 .catch(function (error) {
                     // handle error
-                    console.log(error);
-                })
-                .then(function () {
-                    // always executed
+                    // "./img/error.png"
+                    // console.log(error);
                 });
         }
         //this line would happen right after axios api call
@@ -79,7 +74,6 @@ class App extends Component {
         //restaurant logo, location, and hours
     //grid of menu items
         //cards with image, name, price, and description
-
     render() {
         return (
             <div className="App">
