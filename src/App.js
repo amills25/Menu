@@ -14,7 +14,7 @@ class App extends Component {
             image: null,
             menuAPIData: {}
         };
-        let imageArray = [
+        this.imageArray = [
             "./img/banana.png",
             "./img/burger.png",
             "./img/chef.png",
@@ -38,32 +38,41 @@ class App extends Component {
     //Item
 
 
-    generatePrice(dollar) {
+    generatePrice(min, max) {
+        let dollar = Math.floor(Math.random() * (max - min) + min);
+        console.log(dollar);
         this.setState (
             {
                 price: dollar
             }
         )
     }
-    generateImage(img) {
-        
+    generateImage() {
+        var random = Math.floor(Math.random() * this.imageArray.length);
+        console.log(random);
+        this.setState (
+            {
+                image: this.imageArray[random]
+            }
+        )
     }
     componentDidMount() {
         console.log("App successfully loaded!");
+        this.loadAPI();
+        this.generatePrice(8,12);
+        this.generateImage();
     }
     componentDidUpdate() {
         console.log("App successfully updated!");
     }
     loadAPI() {
-        const menu_API_URL = "https://port-3000-aincbootcampapi-ianrios529550.codeanyapp.com/api/menu/type_amount/{type_id}/{amount_id}";
+        // const menu_API_URL = "https://port-3000-aincbootcampapi-ianrios529550.codeanyapp.com/api/menu/type_amount/{type_id}/{amount_id}";
+        const menu_API_URL = "https://port-3000-aincbootcampapi-ianrios529550.codeanyapp.com/api/menu/type_amount/5/6";
 
         axios.get(menu_API_URL)
-            .then(res => {
+            .then(function (response) {
                 // handle success
-                this.setState({
-
-                })
-                console.log(res.data);
+                console.log(response);
             })
             .catch(function (error) {
                 // handle error
@@ -92,7 +101,7 @@ class App extends Component {
                 <img src="./img/AMBlackSmallTrans.jpg" className="rounded mx-auto d-block" alt="Small Black Logo"></img>
                 <h1 className='text-center'>Berg Bistro</h1>
                 <h5 className='text-center'>348 E Main St, Lexington, KY 40507</h5>
-                <h6 className='text-center'>Tu-Sa 11A-3P</h6>
+                <h6 className='text-center'>Tu-Sa 11A-8P</h6>
                 <button className='d-grid gap-2 col-1 mx-auto btn btn-outline-dark' onClick={this.loadAPI.bind(this)}>View Menu</button>
                 <h3 className="text-center">Menu:</h3>
                 <div className='container'>

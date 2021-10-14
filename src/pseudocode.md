@@ -41,7 +41,9 @@
 ### ITEM
 ##### Props
 * API fed -- name
+ * // response.data[0].name;
 * API fed -- description
+ * // response.data[0].description;
 
 ##### View
 * Card
