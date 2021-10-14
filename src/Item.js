@@ -29,12 +29,12 @@ class Item extends Component {
     render() {
         // console.log(this.props)
         return (
-            <div class="card">
-                <img src={this.props.src} class="card-img-top" alt="banana" />
-                <div class="card-body">
-                    <h5 class="card-title">{this.props.data.name}</h5>
-                    <p class="card-text">${this.state.price}</p>
-                    <p class="card-text">{this.props.data.description}</p>
+            <div className="card">
+                <img src={this.props.src} className="card-img-top" alt="banana" />
+                <div className="card-body">
+                    <h5 className="card-title">{this.props.data.name}</h5>
+                    <p className="card-text">${this.state.price}</p>
+                    <p className="card-text">{this.props.data.description}</p>
                 </div>
             </div>
         );

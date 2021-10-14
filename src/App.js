@@ -104,7 +104,7 @@ class App extends Component {
                 <h6 className='text-center'>Friday 11AM - 8PM</h6>
                 <h6 className='text-center'>Saturday 11AM - 8PM</h6>
                 <hr></hr>
-                <div class="row-1">
+                <div className="row-1">
                     <div className="col text-center">
                         <img src="./img/AMBlackSmallTrans.jpg" alt="Andrew Mills Logo" width="30" height="24" />
                                 Developed by Andrew Mills, 2021.
