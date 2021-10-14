@@ -35,9 +35,6 @@ class App extends Component {
 
 
     //Controller
-    //Item
-
-
     generatePrice(min, max) {
         let dollar = Math.floor(Math.random() * (max - min) + min);
         console.log(dollar);
@@ -64,6 +61,11 @@ class App extends Component {
     }
     componentDidUpdate() {
         console.log("App successfully updated!");
+    }
+    stateSetter() {
+        this.setState({
+            menuAPIData: {}
+        })
     }
     loadAPI() {
         // const menu_API_URL = "https://port-3000-aincbootcampapi-ianrios529550.codeanyapp.com/api/menu/type_amount/{type_id}/{amount_id}";

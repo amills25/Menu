@@ -5,7 +5,7 @@ import React, {Component} from 'react';
 class Item extends Component {
     //Model
     constructor() {
-
+        super()
     }
 
     //Controller
