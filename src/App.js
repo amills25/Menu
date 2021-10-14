@@ -33,11 +33,13 @@ class App extends Component {
     }
 
     //Controller
+    //method to return a random image from imageArray
     generateImage() {
         var random = Math.floor(Math.random() * this.imageArray.length);
         // console.log(random);
         return this.imageArray[random];
     }
+    //what runs when the page loads
     componentDidMount() {
         // console.log("App successfully loaded!");
         this.loadAPI();
@@ -49,10 +51,11 @@ class App extends Component {
     loadAPI() {
         const menu_API_URL = "https://port-3000-aincbootcampapi-ianrios529550.codeanyapp.com/api/menu/type_amount/";
 
+        //loop through the state so we're populating items for apps, lunch, and dinner
         for (let i = 0; i < this.state.menuAPIData.length; i++) {
             let state = this.state.menuAPIData;
             let currentItem = state[i];
-            axios.get(menu_API_URL + currentItem.id + "/" + currentItem.amount)
+            axios.get(menu_API_URL + currentItem.id + "/" + currentItem.amount) //connecting the correct type of food and amount of items to the API
                 .then( response => {
                     // handle success
                     currentItem.data = response.data;
@@ -84,7 +87,7 @@ class App extends Component {
                 <hr></hr>
                 <div className='container'>
                     <div className='row justify-content-center'>
-                        {this.state.menuAPIData.map((section, i) => {
+                        {this.state.menuAPIData.map((section, i) => { //loop through our API data
                             return (
                                 <div className='col-4 text-center' key={i}>
                                     <h3>{section.header}</h3>
