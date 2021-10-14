@@ -81,7 +81,7 @@ class App extends Component {
     render() {
         return (
             <div className="App">
-                <img src="./img/AMBlackXLTrans.jpg" className="img-fluid w-25 rounded mx-auto d-block" alt="Small Black Logo"></img>
+                <img src="./img/AMBlackSmallTrans.jpg" className="rounded mx-auto d-block" alt="Small Black Logo"></img>
                 <h1 className='text-center display-1'>Berg Bistro</h1>
                 <h1 className="text-center">Menu</h1>
                 <hr></hr>
@@ -101,11 +101,13 @@ class App extends Component {
                 <h4 className='text-center'><strong>348 E Main St</strong></h4>
                 <h4 className='text-center'><strong>Lexington, KY 40507</strong></h4>
                 <h5 className='text-center'><u>Hours</u></h5>
-                <h6 className='text-center'>Tuesday 11AM - 8PM</h6>
-                <h6 className='text-center'>Wednesday 11AM - 8PM</h6>
-                <h6 className='text-center'>Thursday 11AM - 8PM</h6>
-                <h6 className='text-center'>Friday 11AM - 8PM</h6>
-                <h6 className='text-center'>Saturday 11AM - 8PM</h6>
+                <h6 className='text-center'>Monday: CLOSED</h6>
+                <h6 className='text-center'>Tuesday: 11AM - 8PM</h6>
+                <h6 className='text-center'>Wednesday: 11AM - 8PM</h6>
+                <h6 className='text-center'>Thursday: 11AM - 8PM</h6>
+                <h6 className='text-center'>Friday: 11AM - 8PM</h6>
+                <h6 className='text-center'>Saturday: 11AM - 8PM</h6>
+                <h6 className='text-center'>Sunday: CLOSED</h6>
                 <hr></hr>
                 <div className="row-1">
                     <div className="col text-center">
