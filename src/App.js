@@ -16,19 +16,21 @@ class App extends Component {
         this.imageArray = [
             "./img/banana.png",
             "./img/burger.png",
+            "./img/charcuterie.jpg",
             "./img/chef.png",
             "./img/chefhatblack.jpg",
-            "./img/donut.jpg",
             "./img/fries.png",
-            "./img/fruit.png",
             "./img/hotdog.png",
             "./img/pasta.jpg",
             "./img/pie.png",
             "./img/pizza.png",
-            "./img/plate.jpg",
+            "./img/pretzel.jpg",
             "./img/salad.jpg",
             "./img/sandwich.png",
+            "./img/soup.jpg",
             "./img/tacos.png",
+            "./img/turkey.png",
+            "./img/watermelon.jpg",
         ]
     }
 
@@ -54,17 +56,17 @@ class App extends Component {
         //loop through the state so we're populating items for apps, lunch, and dinner
         for (let i = 0; i < this.state.menuAPIData.length; i++) {
             let state = this.state.menuAPIData;
-            let currentItem = state[i];
-            axios.get(menu_API_URL + currentItem.id + "/" + currentItem.amount) //connecting the correct type of food and amount of items to the API
+            let currentMeal = state[i];
+            axios.get(menu_API_URL + currentMeal.id + "/" + currentMeal.amount) //connecting the correct type of food and amount of items to the API
                 .then( response => {
                     // handle success
-                    currentItem.data = response.data;
+                    currentMeal.data = response.data;
                     this.setState({ menuAPIData: state });
                     // console.log(response);
                 })
                 .catch(function (error) {
                     // handle error
-                    // "./img/error.png"
+                    return this.props.src("./img/error.png");
                     // console.log(error);
                 });
         }

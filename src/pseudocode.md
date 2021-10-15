@@ -40,6 +40,7 @@
 * componentDidUpdate
 * loadAPI
  * Axios call
+ * loop through meals, copy state, save current meal we're going to display
 
 ### ITEM
 ##### Props
