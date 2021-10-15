@@ -83,11 +83,13 @@ class App extends Component {
     render() {
         return (
             <div className="App">
-                <img src="./img/AMBlackSmallTrans.jpg" className="rounded mx-auto d-block" alt="Small Black Logo"></img>
-                <h1 className='text-center display-1'>Berg Bistro</h1>
+                <img src="./img/AMBlackXLTrans.jpg" className="logo rounded mx-auto d-block" alt="Small Black Logo"></img>
+                <h1 className='text-center display-2 fst-italic'>Cafe di Cresta</h1>
+                <br></br>
+                <br></br>
                 <h1 className="text-center">Menu</h1>
-                <hr></hr>
                 <div className='container'>
+                <hr></hr>
                     <div className='row justify-content-center'>
                         {this.state.menuAPIData.map((section, i) => { //loop through our API data
                             return (
